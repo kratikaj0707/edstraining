@@ -1,0 +1,37 @@
+.banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background-color: #216cbc; /* Blue background */
+    color: #fff;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  
+  .banner img {
+    max-width: 150px;
+    border-radius: 8px;
+  }
+  
+  .banner-content {
+    max-width: 600px;
+  }
+  
+  .banner h2 {
+    margin: 0 0 0.5rem;
+    font-size: 2rem;
+  }
+  
+  .banner p {
+    margin: 0 0 1rem;
+  }
+  
+  .banner a {
+    color: #fff;
+    background: #0056b3;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+  }
+  
