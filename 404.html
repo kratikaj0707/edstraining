@@ -36,14 +36,27 @@
       min-height: calc(100vh - var(--nav-height));
       display: flex;
       align-items: center;
+
+    }
+
+    div.section {
+      margin: 10px;
+      justify-content: center;
     }
 
     main.error .error-number {
       width: 100%;
+      padding: 5%;
+
+    }
+
+    .error-message {
+      color: red;
     }
 
     main.error .error-number text {
       font-family: monospace;
+
     }
   </style>
   <link rel="stylesheet" href="/styles/lazy-styles.css">
@@ -54,7 +67,7 @@
   <main class="error">
     <div class="section">
       <svg viewBox="1 0 38 18" class="error-number">
-        <text x="0" y="17">404</text>
+        <text x="0" y="17" style="color: blue;">404</text>
       </svg>
       <h2 class="error-message">Page Not Found</h2>
       <p class="button-container">
