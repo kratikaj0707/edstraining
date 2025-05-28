@@ -1,0 +1,12 @@
+.sectionhome {
+    position: relative;
+    max-width: 10%;
+    /* max-height: 150px; */
+}
+.section-img{
+    display: block;
+    height: 10px;
+}
+.section-content {
+    position: absolute;
+}
