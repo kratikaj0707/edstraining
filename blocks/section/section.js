@@ -1,6 +1,6 @@
 export default function decorate(block){
     const img= block.queryselector('img');
-    const text=block.queryselector('text');
+    const text=block.queryselector('strong');
     block.classList.add('sectionhome');
     const content = document.createElement('sectionhome');
     content.className='section-content';
