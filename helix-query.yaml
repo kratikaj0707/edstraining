@@ -6,9 +6,9 @@ indices:
     target: /query-index.json
     properties:
       title:
-        select: head > title
-        value: |
-          text
+        select: head > meta[name="og:title"]
+        value: attribute(el,'content')
+          
           
 
       description:
@@ -20,10 +20,10 @@ indices:
         value: attribute(el,'content')
 
       tags:
-        select: head > meta[name="keywords"]
+        select: head > meta[name="og:tags"]
         value: attribute(el,'content')
 
       author:
-        select: main > div:nth-of-type(3) > p:nth-of-type(1)
-        value: |
-          match(el, 'a (.*)')
+        select: main > meta[name="author"]
+        value: attribute(el,'content')
+          
