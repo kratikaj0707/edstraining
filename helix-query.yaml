@@ -23,7 +23,4 @@ indices:
         select: head > meta[property="og:tags"]
         value: attribute(el,'content')
 
-      author:
-        select: main > meta[name="author"]
-        value: attribute(el,'content')
-          
+    
