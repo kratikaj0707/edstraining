@@ -11,24 +11,9 @@ export default async function decorate(block) {
   
     const rowsPerPage = 20;
     let currentPage = 1;
+    const list = document.createElement('ul');
+    list.className = 'spreadsheet-list';
   
-    // Create table elements
-    const table = document.createElement('table');
-    const thead = document.createElement('thead');
-    const tbody = document.createElement('tbody');
-  
-    // Build table head
-    const headerRow = document.createElement('tr');
-    columns.forEach(col => {
-      const th = document.createElement('th');
-      th.textContent = col;
-      headerRow.appendChild(th);
-    });
-    thead.appendChild(headerRow);
-    table.appendChild(thead);
-    table.appendChild(tbody);
-  
-    // Pagination buttons container
     const pagination = document.createElement('div');
     pagination.className = 'pagination';
   
@@ -43,29 +28,28 @@ export default async function decorate(block) {
     pagination.appendChild(prevBtn);
     pagination.appendChild(nextBtn);
   
-    block.appendChild(table);
+    block.appendChild(list);
     block.appendChild(pagination);
   
-    // Function to render a page
     function renderPage(page) {
-      tbody.innerHTML = ''; // Clear current rows
+      list.innerHTML = '';
       const start = (page - 1) * rowsPerPage;
       const end = Math.min(start + rowsPerPage, rows.length);
       for (let i = start; i < end; i++) {
-        const tr = document.createElement('tr');
-        columns.forEach(col => {
-          const td = document.createElement('td');
-          td.textContent = rows[i][col];
-          tr.appendChild(td);
-        });
-        tbody.appendChild(tr);
+        const li = document.createElement('li');
+        li.className = 'spreadsheet-list-item';
+  
+        // Combine column values for this row into a readable string
+        const content = columns.map(col => rows[i][col]).filter(Boolean).join(' - ');
+        li.textContent = content;
+  
+        list.appendChild(li);
       }
-      // Update buttons state
+  
       prevBtn.disabled = page === 1;
       nextBtn.disabled = end >= rows.length;
     }
   
-    // Button event listeners
     prevBtn.addEventListener('click', () => {
       if (currentPage > 1) {
         currentPage--;
@@ -80,6 +64,5 @@ export default async function decorate(block) {
       }
     });
   
-    // Initial render
     renderPage(currentPage);
   }

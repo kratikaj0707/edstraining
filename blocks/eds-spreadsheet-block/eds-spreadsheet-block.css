@@ -1,35 +1,28 @@
-/* Add this CSS to your block or page */
-table {
-    width: 100%;
-    border-collapse: collapse;
+.spreadsheet-list {
+    list-style: none;
+    padding: 0;
     margin-top: 1rem;
     font-family: Arial, sans-serif;
     font-size: 14px;
   }
   
-  thead {
-    background-color: #f4f4f4;
-  }
-  
-  th,
-  td {
+  .spreadsheet-list-item {
+    background-color: #fff;
+    margin-bottom: 8px;
     padding: 12px 16px;
-    text-align: left;
     border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
   }
   
-  tr:nth-child(even) {
-    background-color: #fafafa;
+  .spreadsheet-list-item:nth-child(even) {
+    background-color: #f9f9f9;
   }
   
-  tr:hover {
+  .spreadsheet-list-item:hover {
     background-color: #f1f1f1;
   }
   
-  th {
-    font-weight: 600;
-    color: #333;
-  }
   .pagination {
     margin-top: 1rem;
     text-align: center;
@@ -55,3 +48,4 @@ table {
   .pagination button:hover:not(:disabled) {
     background-color: #0056b3;
   }
+  
