@@ -13,15 +13,15 @@ indices:
 
       description:
         select: head > meta[name="description"]
-        value: attr(el,name)
+        value: attribute(el,'content')
 
       image:
         select: head > meta[property="og:image"]
-        value: attr(el,name)
+        value: attr(el,'content')
 
       tags:
         select: head > meta[name="keywords"]
-        value: attr(el,name)
+        value: attr(el,'content')
 
       author:
         select: main > div:nth-of-type(3) > p:nth-of-type(1)
