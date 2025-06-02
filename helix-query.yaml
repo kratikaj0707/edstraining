@@ -7,8 +7,8 @@ indices:
     properties:
       title:
         select: head > meta[name="title"]
-        value: |
-        
+        value: attribute(el,'content')
+          
 
       description:
         select: head > meta[name="description"]
