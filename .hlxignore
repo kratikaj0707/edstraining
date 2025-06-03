@@ -4,6 +4,7 @@ karma.config.js
 LICENSE
 package.json
 package-lock.json
+/private-file
 test/*
-private-file
+
 
